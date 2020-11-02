@@ -1,0 +1,97 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Itext7测试文档</title>
+	<style type="text/css">
+		body {
+			font-family: SimSun;
+			font-size: 14pt;
+			line-height: 22pt;
+			padding: 25pt 30pt 35pt 30pt;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+		tr {
+			height: 22pt;
+		}
+		td {
+			border: 1pt solid #000000;
+			padding: 0 5pt;
+			vertical-align: middle;
+		}
+		p {
+			margin-top: 5pt;
+			margin-bottom: 5pt;
+		}
+		.tt {
+			font-size: 26pt;
+			text-align:center;
+			display: block;
+		}
+		.st {
+			font-size: 16pt;
+			margin-top: 15pt;
+			display: block;
+		}
+		.hei {
+			font-family: STHeiti;
+		}
+		@page {
+			@bottom-center {
+				vertical-align: top;
+				content: "第 " counter(page) " 页 / 共 " counter(pages) " 页";
+				margin-top: -10pt;
+			}
+		}
+	</style>
+</head>
+	<body>
+		<div>
+			<p class="tt">
+				<span>Itext7测试文档</span>
+			</p>
+			<br/>
+			<p class="st hei">
+				<span>1. Itext7通过html模板生成pdf文档</span>
+			</p>
+			<p style="text-indent:21pt;">
+				<span>这是一个测试文档，为了测试itext7在java项目中的使用。</span>
+			</p>
+			<p style="text-indent:21.25pt;">
+				<span>1)先把word模板转为html模板</span>
+			</p>
+			<p style="text-indent:21.25pt;">
+				<span>2)用freemarker填充html模板中的变量</span>
+			</p>
+			<p style="text-indent:21.25pt;">
+				<span>3)用itextpdf中的html2pdf把html文件转为pdf</span>
+			</p>
+			<p class="st hei">
+				<span>2. 变量赋值</span>
+			</p>
+			<p style="text-indent:21pt;">
+				<span>变量var1：${var1}</span>
+			</p>
+			<p style="text-indent:21pt;">
+				<span>通过拼接字符串生成表格内容tab1：</span>
+			</p>
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td style="width:20%; text-align: center;" class="hei">
+						<span>编号</span>
+					</td>
+					<td style="width:30%; text-align: center;" class="hei">
+						<span>项目</span>
+					</td>
+					<td style="width:50%; text-align: center;" class="hei">
+						<span>内容</span>
+					</td>
+				</tr>
+				${tab1}
+			</table>
+		</div>
+	</body>
+</html>
